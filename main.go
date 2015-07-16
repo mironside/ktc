@@ -5,11 +5,19 @@ import (
 	"html/template"
 	"io/ioutil"
 	"net/http"
+	"strings"
 )
 
 func handlerequest(w http.ResponseWriter, r *http.Request) {
-	f, _ := ioutil.ReadFile("index.md")
-	md := blackfriday.MarkdownCommon(f)
+	path := "index"
+	if r.URL.Path != "/" {
+		path = strings.Trim(r.URL.Path, "/")
+	}
+	f, _ := ioutil.ReadFile(path + ".md")
+	lines := strings.Split(string(f), "\n")
+	templateFile := strings.TrimSpace(lines[0])
+	markdown := strings.Join(lines[1:], "\n")
+	body := blackfriday.MarkdownCommon([]byte(markdown))
 
 	d := struct {
 		Title string
@@ -18,11 +26,11 @@ func handlerequest(w http.ResponseWriter, r *http.Request) {
 	}{
 		Title: "Welcome!",
 		Items: []string{"item1", "item2", "item3"},
-		Body:  template.HTML(md),
+		Body:  template.HTML(body),
 	}
 
-	t := template.New("index.html")
-	t, _ = template.ParseFiles("index.html")
+	t := template.New(templateFile)
+	t, _ = template.ParseFiles(templateFile)
 	t.Execute(w, d)
 }
 
