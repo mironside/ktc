@@ -1,0 +1,549 @@
+@charset "UTF-8";
+/* Simple fluid media
+   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+	width:100%;
+}
+
+/*
+	Dreamweaver Fluid Grid Properties
+	----------------------------------
+	dw-num-cols-mobile:		5;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	10;
+	dw-gutter-percentage:	20;
+	
+	Inspiration from "Responsive Web Design" by Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	and Golden Grid System by Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+/* Mobile Layout: 480px and below. */
+@import url(http://fonts.googleapis.com/css?family=Cabin+Sketch|Pompiere|Open+Sans:300);
+
+img{margin:0; padding:0; width:100%;}
+body{font-family:'Open Sans', sans-serif;
+	font-size: 1.12em;}
+.gridContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+	padding-left: 1.5833%;
+	padding-right: 1.5833%;
+}
+
+a:link{
+	color: #036;
+	text-decoration: none;
+	}
+
+a:visited{
+	color: #666;
+	text-decoration: none;
+	}
+a:hover{
+	color: #F90;
+	text-decoration: underline;
+	}
+
+
+#wrapper{
+	width:85%;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;}
+
+
+#Logo {
+	clear: both;
+	float: left;
+	margin-left: auto;
+	margin-right:auto;
+	postion:relative;
+	width: 90%;
+	display: block;
+}
+#header {
+	clear: both;
+	float: left;
+	width: 100%;
+	display: block;
+}
+#Title{
+	width:85%;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	text-align:center;}
+h1 {
+    font-family: 'Pompiere',sans-serif;
+    font-size: 3em;
+    font-weight: normal;
+}
+#nav {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#nav ul {
+	margin-right:auto;
+	margin-left:auto;
+	
+}
+#nav ul li{
+	float: left;
+	list-style-type: none;
+	position: relative;
+	clear: both;
+	width:100%}
+
+#nav ul li a {
+    color: #000000;
+    display: block;
+    float: left;
+    font-family: 'Cabin Sketch',sans serif;
+    font-size: 1.3em;
+    margin-right: 0;
+    padding:5px;
+    text-decoration: none;
+	text-align:center;
+	width: 100%;
+	
+}
+#nav ul li a:hover {
+	color:#393;
+}
+
+#nav ul ul{
+	position:relative;
+	width: 130px;
+	z-index:9999;
+	margin-top:25px;
+	}
+
+#nav ul ul li a{
+	display:block;
+	font-size:1.3em;
+	text-align:center;
+	border:none;
+	color:#000;
+	width: 125px;
+	padding:5px;
+	z-index: 9999;}
+#nav ul ul li a:hover{
+	color:#393}
+#container{display:none !important}
+
+
+flex-control-thumbs li {
+width: 25%;
+float: left;
+margin: 0;
+}
+
+.flex-control-nav li {
+margin: 0 6px;
+display: block;
+zoom: 1;
+}
+
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+@media only screen and (min-width: 481px) {
+html {
+ -webkit-text-size-adjust: none;
+ }
+.gridContainer {
+	width: 93.0208%;
+	padding-left: 0.9895%;
+	padding-right: 0.9895%;
+	
+}
+#Logo {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 20%;
+	display: block;
+}
+#Title {
+    clear: none;
+    display: block;
+    float: left;
+    margin-left: 1.6949%;
+    margin-top: -6%;
+    width: 75%;
+	text-align: left;
+}
+
+header{width:95%; margin-left:auto; margin-right:auto; position:relative;}
+
+
+#nav {
+    clear: both;
+    display: block;
+    float: left;
+    margin-left: 33%;
+    margin-top: -3%;
+    width: 52%;
+}
+#nav ul {
+	
+	margin-right:auto;
+	margin-left:auto;
+	
+}
+#nav ul li{
+	clear:none;
+	float:left;
+	list-style-type:none;
+	position:relative;
+	width:auto;}
+
+#nav ul li a {
+    border-right: thin dotted #000000;
+    color: #000000;
+    display: block;
+    float: left;
+    font-family: 'Cabin Sketch',sans serif;
+    font-size: 1.3em;
+    margin-right: 0;
+    padding: 9px 9px 0;
+    text-decoration: none;
+	width:auto;
+}
+#nav ul li a:hover {
+	color:#393;
+}
+
+#nav ul ul{
+	display:none;
+	position:relative;
+	width: 130px;
+	z-index:9999;
+	margin-top:25px;
+	}
+#nav ul li:hover ul{
+	display:block !important;
+	position:absolute;
+	top:0px;
+	left:0px;}
+#nav ul ul li a{
+	display:block;
+	font-size:1em;
+	text-align:center;
+	border:none;
+	background-color:#000;
+	color:#FFF;
+	width: 125px;
+	padding:5px;}
+#nav ul ul li a:hover{
+	color:#FC3}
+#container{
+	clear:both;
+	margin-left: auto;
+	margin-right:auto;
+	position:relative;
+	margin-top:3%;
+	width:100%;
+	padding:0px;
+	display:block !important	}
+	
+#seriesinfo{
+	margin-left: auto;
+margin-right: auto;
+position: relative;
+width: 75%;
+display: block;
+clear: both;
+padding-top: 4%;
+z-index:10;}
+
+
+.item {
+  width: 220px;
+  margin: 10px;
+  float: left;
+}
+
+#gallery{
+	width:85%;
+	float:left;
+	margin-left:-35%;
+	margin-right:auto;
+	position:relative;
+	margin-top:5%;
+	display:block !important	}
+	
+.nav-container{
+	float:left;
+	display:block;
+	margin-right: 0px;
+width: 50%;
+margin-top: 5%;}
+
+
+	
+	
+#artist {
+    clear: both;
+    float: right;
+    margin: -5% 5%;
+    padding: 0;
+	width:100%;
+	z-index:999;
+	position:relative;
+}
+
+.blockinfo{
+	width:95%;
+	clear:both;
+	float:left;
+	display:block;}
+#press{
+	width:30%;
+	float:left;
+	margin:2%;
+	display:block;}
+	
+.about_copy{
+	display:block;
+	width:60%;
+	height:auto;
+	float:left;
+	font-size:1em}
+	
+.artistimg{
+	width: 30%;
+	float:left;
+	margin:2%;
+	display:block;}
+	
+.artistimg2{
+	width:25%;
+	float:left;
+	margin:	2%;
+	display:block;}
+	
+.artistbio{
+	width: 60%;
+	float: left;
+	display: block;
+	clear: none;
+	
+}
+.artistbio h4 {
+	margin-top: 5%;
+	margin-right: 2%;
+	margin-bottom: 0%;
+	margin-left: 0%;
+}
+.about_copy h4 {
+	margin-top: 5%;
+	margin-right: 2%;
+	margin-bottom: 0px;
+	margin-left: 0%;
+}
+
+#portrait{
+	width:30%;
+	float:left;
+	margin-right:5%;
+	margin-left:5%;	margin-top:5%;
+}
+.gallery {margin:.5%; width:30%;}
+
+.col1 {
+    margin: 1%;
+    width: 23%;
+}
+.col2 {
+    margin: 1% 1% 1% 0;
+    width: 32%;
+}
+.col3 {
+    margin: 1% 1% 1% 0;
+    width: 31%;
+}
+.col3b {
+    margin-left: 0;
+    margin-top: 0;
+    width: 31%;
+}
+.col4 {
+    margin-top: -19%;
+    width: 56%;
+}
+h1 {
+    font-family: 'Pompiere',sans-serif;
+    font-size: 2.45em;
+    font-weight: normal;
+    margin-left: -4%;
+    margin-top: 20%;
+}
+h2 {font-family: 'Cabin Sketch',sans-serif;
+font-size: 3.5em;
+font-weight: normal;
+margin-bottom: -34px;
+margin-right: 5%;
+text-align: right;
+	
+}
+h3 {
+    font-family: 'Pompiere',sans-serif;
+font-size: 2em;
+font-weight: normal;
+margin-right: 5%;
+margin-top: 0;
+text-align: right;
+	
+}
+h4{font-family: 'Cabin Sketch',sans-serif; font-size: 2em;
+font-weight:normal; margin:2%;
+	}
+	
+h5{font-family: 'Cabin Sketch',sans-serif; font-size: 1.5em;
+font-weight:normal; margin:2%;
+	}
+	
+#new{ width: 75%;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	clear:both;}
+
+}
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+@media only screen and (min-width: 769px) {
+html {
+ -webkit-text-size-adjust: none;
+ }
+.gridContainer {
+	width: 95%;
+	max-width: 1232px;
+	padding-left: 0.7916%;
+	padding-right: 0.7916%;
+	margin: auto;
+	position:relative;
+}
+
+#Logo {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 18%;
+	display: block;
+}
+#Title {
+	clear: none;
+	float: left;
+	margin-left: 1.6949%;
+	width: 38.983%;
+	display: block;
+	margin-top:0;
+	text-align:center;
+}
+h1 {
+    font-family: 'Pompiere',sans-serif;
+    font-size: 2.75em;
+    font-weight: normal;
+    margin-left: -9%;
+    margin-top: 20%;
+}
+
+#nav {
+    clear: none;
+    display: block;
+    float: left;
+    margin-left: 2%;
+    margin-top: 9.5%;
+    width: 39%;
+}
+#nav ul {
+	
+	margin-right:auto;
+	margin-left:auto;
+	
+}
+#nav ul li{
+	float:left;
+	list-style-type:none;
+	position:relative;
+	width:auto;}
+
+#nav ul li a {
+	color: #000000;
+	display: block;
+	float: left;
+	font-family: 'Cabin Sketch',sans serif;
+	font-size: 16px;
+	margin-right: 0;
+	padding: 9px;
+	padding-bottom:0px;
+	text-decoration: none;
+	border-right-width: thin;
+	border-right-style: dotted;
+	border-right-color: #000;
+}
+#nav ul li a:hover {
+	color:#393;
+}
+
+#nav ul ul{
+	display:none;
+	position:relative;
+	width: 130px;
+	z-index:9999;
+	margin-top:25px;
+	}
+#nav ul li:hover ul{
+	display:block;
+	position:absolute;
+	top:0px;
+	left:0px;}
+#nav ul ul li a{
+	display:block;
+	font-size:1em;
+	text-align:center;
+	border:none;
+	background-color:#000;
+	color:#FFF;
+	width: 125px;
+	padding:5px;}
+#nav ul ul li a:hover{
+	color:#FC3}
+
+#container{width: 85%;
+margin-left: auto;
+margin-right: auto;
+position: relative;;
+}}
+
+#portfolio_container {
+
+width: 70%;
+margin-right: auto;
+margin-left: auto;
+position: relative;
+}
+#portfolio_gallery {
+display: block;
+float: left;
+width: 105%;
+margin-right: auto;
+margin-left: auto;
+position: relative;
+margin-top: 5%; }
