@@ -1,11 +1,13 @@
 <html>
 	<body>
 		<h1>{{.Title}}</h1>
-		<ul>
-		{{range .Items}}
-			<li>{{.}}</li>
+		Images<br/>
+		{{range .Files "jpg" "gif"}}
+			<img src="{{.}}"/><br/>
 		{{end}}
-		</ul>
-		<p>{{.Body}}</p>
+		PDFs<br/>
+		{{range .Files "pdf"}}
+			<a href="{{.}}">{{.}}</a><br/>
+		{{end}}
 	</body>
 </html>
